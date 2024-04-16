@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <form action="/contract/FarmDetails/" method="post">{% csrf_token %}
+        <div>
+          <h2>Step 2 - Enter Address & Other Details:</h2>
+        </div>
+        
+      <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="inputname">Username</label>
+              <input type="name" class="form-control" id="usernames" name="usernames" placeholder="Username">
+          </div>
+          <div class="form-group col-md-6">
+              <label for="inputname">Survey Number</label>
+              <input type="name" class="form-control" id="names" name="SurveyNumber" placeholder="Name">
+          </div>
+          <div class="form-group col-md-6">
+              <label for="inputname">Crop Type</label>
+              <input type="name" class="form-control" id="croptype" name="croptype" placeholder="Name">
+          </div>
+          <div class="form-group col-md-6">
+              <label for="inputDimension">Dimension Of Farm</label>
+              <input type="name" class="form-control" id="inputDimension" name="dimension" placeholder="E.g. Square, Oval, Rectangle, Parlellogram">
+          </div>
+          <div class="form-group col-md-6">
+              <label for="inputSoilpH">pH of th Farm Soil</label>
+              <input type="name" class="form-control" id="inputSoilpH" name="inputSoilpH" placeholder="pH of the Soil" required>
+          </div>
+          <div class="form-group col-md-6">
+              <label for="inputFarmArea">Area Of LAnd ( In Acers )</label>
+              <input type="name" class="form-control" id="inputFarmArea" name="inputFarmArea" placeholder="Enetr Area in Acers" required>
+          </div>
+      </div>
+      <div class="head" style="margin:50px 0 30px 0;">
+          <h2 class="Heading-1">Input The Soil Fertility Components</h2>
+      </div>
+      <div class="form-row">
+          <div class="form-group col-md-5" style="margin-left: 50px;">
+              <label for="inputSoilNitrogen">Nitrogen in Soil</label>
+              <input type="text" class="form-control" id="inputSoilNitrogen" name="inputSoilNitrogen" placeholder="Nitrogen" required>
+          </div>
+          <div class="form-group col-md-5" style="margin-left: 100px;">
+              <label for="inputSoilPhosphorous">Phosphorous in Soil</label>
+              <input type="text" class="form-control" id="inputSoilPhosphorous" name="inputSoilPhosphorous" placeholder="Phosphorous" required>
+          </div>
+          <div class="form-group col-md-5" style="margin-left: 50px;">
+              <label for="inputSoilPottassium">Pottassium in Soil</label>
+              <input type="text" class="form-control" id="inputSoilPottassium" name="inputSoilPottassium" placeholder="Pottassium" required>
+          </div>
+          <div class="form-group col-md-5" style="margin-left: 100px;">
+              <label for="inputSoilSulphur">Sulphur in Soil</label>
+              <input type="text" class="form-control" id="inputSoilSulphur" name="inputSoilSulphur" placeholder="Sulphur">
+          </div>
+          <div class="form-group col-md-5" style="margin-left: 50px;">
+              <label for="inputSoilCalcium">Calcium in Soil</label>
+              <input type="text" class="form-control" id="inputSoilCalcium" name="inputSoilCalcium" placeholder="Calcium ">
+          </div>
+          <div class="form-group col-md-5" style="margin-left: 100px;">
+              <label for="inputSoilMagnisium">Magnisium in Soil</label>
+              <input type="text" class="form-control" id="inputSoilMagnisium" name="inputSoilMagnesium" placeholder="Magnisium">
+          </div>
+      </div>
+      
+      <div class="head-2" style="margin:50px 0 30px 0;">
+          <h2>Type Of Irrigation That You Needed</h2>
+      </div>
+
+      <select class="form-select" aria-label="Default select example" name="irrigation" required   style="margin-left: 20px;">
+          <option >Open this select menu</option>
+          <option value="Sprinkler Irrigation">Sprinkler Irrigation</option>
+          <option value="Upper Sprikler Irrigation">Upper Sprikler Irrigation</option>
+          <option value="Drip Irrigation">Drip Irrigation</option>
+          <option value="Upper Drip Irrigation">Upper Drip Irrigation</option>
+          <option value="Surface Irrigation">Surface Irrigation</option>
+          <option value="Center Pivote Irrigation">Center Pivote Irrigation</option>
+      </select>
+
+      <h3>----------------------------------------------------------------------------------</h3>
+
+      <input type="submit" value="submit" style="display:block; margin: 20px; padding:15px 50px; border-radius: 8px; border: 2px solid black; color: red;">
+
+    </form>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <script>
+
+    </script>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRI FOR LIFE</title>
+    <link rel="stylesheet" href="{% static style.css %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eater&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+}
+
+section nav{
+    margin-top: 35px;
+    width: 80vw;
+    margin-left: 10vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    right: 0;
+    left: 0;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+section nav .logo img{
+    width: 100px;
+    cursor: pointer;
+    margin: 7px 0;
+}
+
+section nav ul{
+    list-style: none;
+}
+
+section nav ul li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+section nav ul li a{
+    text-decoration: none;
+    font-family: 'Chicle', cursive;
+    color: green;
+    font-weight: 500;
+    font-size: 21px;
+    transition: 0.1s;
+}
+
+section nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: red;
+    display: block;
+    transition: 0.2s linear;
+}
+
+section nav ul li a:hover::after{
+    width: 100%;
+}
+
+section nav ul li a:hover{
+    color: red;
+}
+
+section nav .icon i{
+    font-size: 18px;
+    color: #000;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+section nav .icon i:hover{
+    color: #fac031;
+}
+
+section .main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 130px;
+}
+
+section .main .men_text h1{
+    font-size: 60px;
+    position: relative;
+    top: -90px;
+    left: 20px;
+}
+
+section .main .men_text h1 span{
+    margin-left: 15px;
+    color: #fac031;
+    font-family: mv boli;
+    line-height: 22px;
+    font-size: 70px;
+}
+
+section .main .main_image img{
+    position: relative;
+    left: 70px;
+    border: none;
+    
+}
+
+section p{
+    width: 650px;
+    text-align: justify;
+    position: relative;
+    left: 123px;
+    bottom: 120px;
+    line-height: 22px;
+}
+
+section .main_btn{
+    background: #fac031;
+    position: relative;
+    left: 123px;
+    bottom: 30px;
+    width: 150px;
+    cursor: pointer;
+    padding: 12px 25px;
+}
+
+section .main_btn a{
+    color: #fff;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+section .main_btn i{
+    color: #fff;
+    transition: 0.3s;
+}
+
+section .main_btn:hover i{
+    transform: translateX(7px);
+}
+
+
+
+/*About*/
+
+.about{
+    width: 100%;
+    height: 100vh;
+    padding: 170px 0;
+}
+
+.about .about_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about .about_main .image img{
+    width: 40vw;
+    position: relative;
+    top: 60px;
+    border-radius: 40px 0px;
+    
+}
+
+.about .about_main .about_text h1 span{
+    color: #fac031;
+    margin-right: 15px;
+    font-family: mv boli;
+}
+
+.about .about_main .about_text h1{
+    font-size: 55px;
+    position: relative;
+    bottom: 50px;
+}
+
+.about .about_main .about_text h3{
+    font-size: 30px;
+    margin: 0 0 50px 0;
+}
+
+.about .about_main .about_text p{
+    width: 650px;
+    text-align: justify;
+    margin-right: 30px;
+    line-height: 22px;
+}
+
+.about .about_btn{
+    background: #fac031;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    left: 55%;
+    bottom: 30px;
+}
+
+
+
+/*Gallary*/
+
+.gallary{
+    width: 100%;
+    padding: 70px 0;
+}
+
+.gallary h1{
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallary h1 span{
+    margin-left: 15px;
+    color: #fac031;
+    font-family: mv boli;
+}
+
+.gallary h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fac031;
+    display: block;
+    position: relative;
+    bottom: 15px;
+}
+
+.gallary .gallary_image_box{
+    width: 95%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.gallary .gallary_image_box .gallary_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    border-radius: 50px;
+}
+
+.gallary .gallary_image_box .gallary_image img{
+    width: 100%;
+    transition: .3s;
+    border-radius: 50px;
+}
+
+.gallary .gallary_image_box .gallary_image:hover img{
+    opacity: 0.4;
+}
+
+.gallary .gallary_image_box .gallary_image h3{
+    position: absolute;
+    font-size: 35px;
+    margin-bottom: 130px;
+    color: #fac031;
+    font-family: polo;
+    z-index: 5;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gallary .gallary_image_box .gallary_image:hover h3{
+    opacity: 1;
+}
+
+.gallary .gallary_image_box .gallary_image p{
+    position: absolute;
+    width: 400px;
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    line-height: 22px;
+    opacity: 0;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.gallary .gallary_image_box .gallary_image:hover p{
+    opacity: 1;
+}
+
+.gallary .gallary_image_box .gallary_image .gallary_btn{
+    position: absolute;
+    margin-top: 180px;
+    color: #000;
+    background: #fac031;
+    padding: 7px 25px;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(45px);
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.gallary .gallary_image_box .gallary_image:hover .gallary_btn{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/*Review*/
+
+.review{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+
+.review h1{
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review h1 span{
+    margin-left: 15px;
+    color: #fac031;
+    font-family: mv boli;
+}
+
+.review h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fac031;
+    position: relative;
+    bottom: 15px;
+    display: block;
+}
+
+.review .review_box{
+    width: 95%;
+    margin: 70px auto;
+    display: flex;
+}
+
+.review .review_box .review_card{
+    width: 350px;
+    height: 424px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    padding: 8px 20px;
+    margin: 0 8px;
+}
+
+.review .review_box .review_card .review_profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_profile{
+    transform: translateY(-60px);
+}
+
+.review .review_box .review_card .review_profile img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid #cccccc;
+}
+
+.review .review_box .review_card .review_text{
+    text-align: center;
+}
+
+.review .review_box .review_card .review_text .name{
+    color: #000;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text .name{
+    transform: translateY(-50px);
+}
+
+.review .review_box .review_card .review_text .review_icon{
+    color: #fac031;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text .review_icon{
+    transform: translateY(-30px);
+}
+
+.review .review_box .review_card .review_text .review_social i{
+    margin: 5px 1px;
+    font-size: 15px;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text .review_social i{
+    opacity: 1;
+    transform: translateY(-8px);
+}
+
+.review .review_box .review_card .review_text p{
+    text-align: center;
+    line-height: 22px;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text p{
+    margin-top: 5px;
+}
+
+
+
+/*Order*/
+
+.order{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+    background-image: url(image/bg2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.order h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 55px;
+}
+
+.order h1 span{
+    color: #fac031;
+    margin-right: 15px;
+    font-family: mv boli;
+}
+
+.order h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fac031;
+    display: block;
+    position: relative;
+    bottom: 15px;
+}
+
+.order .order_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.order .order_main .order_image img{
+    width: 600px;
+}
+
+.order .order_main form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 10px;
+}
+
+.order .order_main form .input p{
+    line-height: 25px;
+}
+
+.order .order_main form .input{
+    margin: 5px;
+}
+
+.order .order_main form .input input{
+    width: 300px;
+    height: 35px;
+    padding: 0 10px;
+    border: 2px solid #cccccc;
+    background: #eeeeee;
+    outline: none;
+    border-radius: 3px;
+}
+
+.order .order_main form .input input:focus{
+    border: 2px solid #fac031;
+}
+
+.order .order_main form .order_btn{
+    padding: 10px 0;
+    background: #fac031;
+    color: white;
+    width: 40%;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+
+
+
+/*Team*/
+
+.team{
+    width: 100%;
+    height: 90vh;
+    background-image: url(image/bg1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.team h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.team h1 span{
+    color: #fac031;
+    margin-left: 15px;
+    font-family: mv boli;
+}
+
+.team h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fac031;
+    display: block;
+    position: relative;
+    bottom: 15px;
+}
+
+.team .team_box{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 13%;
+}
+
+.team .team_box .profile{
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover{
+    border-radius: 20px;
+    height: 320px;
+}
+
+.team .team_box .profile img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    z-index: 2;
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover img{
+    border-radius: 20px;
+    margin-top: -230px;
+}
+
+.team .team_box .profile .info{
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover .info{
+    top: 60%;
+}
+
+.team .team_box .profile .info .name{
+    color: #fac031;
+    margin-bottom: 15px;
+}
+
+.team .team_box .profile .info .bio{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 10px auto;
+}
+
+.team .team_box .profile .info .team_icon i{
+    margin: 10px 5px 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.team .team_box .profile .info .team_icon i:hover{
+    color: #fac031;
+}
+
+
+
+/*Footer*/
+
+footer{
+    width: 100%;
+    padding: 30px 0 0 20px;
+    background: #eeeeee;
+}
+
+footer .footer_main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+footer .footer_main .footer_tag{
+    text-align: center;
+}
+
+footer .footer_main .footer_tag h2{
+    color: #000;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+footer .footer_main .footer_tag p{
+    margin: 10px 0;
+}
+
+footer .footer_main .footer_tag i{
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+footer .footer_main .footer_tag i:hover{
+    color: #fac031;
+}
+
+footer .end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+footer .end span{
+    color: #fac031;
+    margin-left: 10px;
+}
+
+::-webkit-scrollbar{
+    width: 13px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb{
+    background: #fac031;
+    border-radius: 15px;
+}
+
+.logo h1{
+    font-family: 'Eater', cursive;
+    font-size: 25px;
+}
+
+.logo h1 span{
+    font-family: 'Eater', cursive;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+/* .hovering-text {
+    min-height: 450px;
+  height: 15vh;
+  margin: 0;
+  background: radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000);
+} */
+
+
+
+
+
+</style>
+<body>
+
+    <!-- <section class="hovering-text">
+        <div class="stage">
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+          </div>
+    </section> -->
+
+   
+
+    <section id="Home" class="navigation" >
+        <nav>
+            <div class="logo">
+                <h1 style="color: green;">AGRI<span style="color: #3c97d7;">FOR</span>LIFE</h1>
+            </div>
+
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Gallary">Services</a></li>
+                <li><a href="#Review">Review</a></li>
+                <li><a href="#Order">Contact</a></li>
+                
+            </ul>
+
+            <div class="icon">
+                <a href="/contract/login_view"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTndRmGMIVPZ0KuQYgXsZW5G8Yukmyx36Sagg&usqp=CAU" alt="" style="height: 50px;">{{username}}</a>
+            </div>
+
+        </nav>
+
+        <div class="men_text1" style="padding: 20px auto; height: 7vh; ">
+            <h1 style="font-family: 'Itim', cursive; font-size: 50px; margin-top: 20px; padding-left: 20vw;">Irrigation & <span style="font-family: 'Oleo Script', cursive; color: orangered;">Farming</span> Management System</h1>
+        </div>
+
+        <div class="main">
+
+            <div class="men_text">
+                <h1>Get Best<span>Irrigation</span><br>in a Easy Way</h1>
+            </div>
+
+            <div class="main_image">
+                <img src="https://images.unsplash.com/photo-1609583120830-7ede0764d401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aXJyaWdhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" style="height: 80vh; width: 40vw; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+            </div>
+
+        </div>
+
+        <p>
+          Irrigation is the artificial application of water to the soil through various systems of tubes, pumps, and sprays. Irrigation is usually used in areas where rainfall is irregular or dry times or drought is expected. There are many types of irrigation systems, in which water is supplied to the entire field uniformly.  <br>
+          rrigation in arid areas of the world provides two essential agricultural requirements: (1) a moisture supply for plant growth which also transports essential nutrients; and (2) a flow of water to leach or dilute salts in the soil.
+        </p>
+
+        <div class="main_btn">
+            <a href="/contract/login_view">Contract</a>
+            <i class="fa-solid fa-angle-right"></i>
+        </div>
+
+    </section>
+
+
+
+    <!--About-->
+
+    <div class="about" id="About">
+        <div class="about_main">
+
+            <div class="image">
+                <img src="https://plus.unsplash.com/premium_photo-1661757549432-446331f0fd6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjF8fGZhcm1pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;">
+            </div>
+
+            <div class="about_text" style="margin-top: 100px;">
+                <h1><span>About</span>Us</h1>
+                <h3>Why Choose us?</h3>
+                <p>
+                    We are the one of the leading Irrigation And Drainage providing company in India.
+                    We provide the irrigation and drainage based on the letest tchnology evolved.
+                    And also we take the whole farm for contract from beggining to end of harvesting.
+                    We also provides a transportation facility for the crop, irrigation items, etc.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+
+
+    <!--Services-->
+
+    <div class="gallary" id="Gallary">
+        <h1>Our<span>Services</span></h1>
+
+        <div class="gallary_image_box">
+            <div class="gallary_image">
+                <img src="https://media.istockphoto.com/id/1414476288/photo/irrigation-on-a-field-of-potatoes-during-a-long-period-of-drought.jpg?b=1&s=612x612&w=0&k=20&c=WsqOaNuvc98qPSJdKGdFOEpn9d1BAnI37Zx2DSDOPAo=" style="height: 100%;">
+
+                <h3>Irrigating</h3>
+                <p>
+                    We completely irrigating your land in a best Modern Irrigation Sysytem at It's best. 
+                </p>
+                <a href="/contract/login_view" class="gallary_btn" style="border-radius: 10px; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;">More</a>
+            </div>
+
+            <div class="gallary_image">
+                <img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZhcm1pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" style="height: 100%;">
+
+                <h3>Farming</h3>
+                <p>
+                    We completely farming your land from the beggining to end of harvesting. If necessary transporting Also Done.
+                </p>
+                <a href="/contract/login_view" class="gallary_btn" style="border-radius: 10px; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;">More</a>
+            </div>
+
+            <div class="gallary_image">
+                <img src="https://images.unsplash.com/photo-1446694292248-2c2a7e575b1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHJhbnNwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" style="height: 100%;">
+
+                <h3>Transporting</h3>
+                <p>
+                    We transport your crop safely to the desired destination of yours in a very short Time.
+                </p>
+                <a href="/transport/login_view" class="gallary_btn" style="border-radius: 10px; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;">More</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Review-->
+
+    <div class="review" id="Review">
+        <h1>Customer<span>Review</span></h1>
+
+        <div class="review_box">
+            <div class="review_card">
+
+                <div class="review_profile">
+                    <img src="{% static 'images/pranav.jpg' %}">
+                </div>
+
+                <div class="review_text">
+                    <h2 class="name">Pranav</h2>
+
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="review_social">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <p>
+                        Haiiii, Iam a Pranav from Doddabidarakallu. Here I am suffering from how to bring water to my farm. But AGRIFORLIFE made it and make my farm wortfull with crops. So Iam very glad to the AGRIFORLIFE.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="review_card">
+
+                <div class="review_profile">
+                    <img src="{% static 'images/vijay.jpg' %}">
+                </div>
+
+                <div class="review_text">
+                    <h2 class="name">Vijay Kumar</h2>
+
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="review_social">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <p>
+                      Haiiii, Iam a Vijay Kumar from Hemmigepura . Here I am suffering from how to bring water to my farm. But AGRIFORLIFE made it and make my farm wortfull with crops. So Iam very glad to the AGRIFORLIFE.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="review_card">
+
+                <div class="review_profile">
+                    <img src="{% static 'images/gappanna.jpg' %}">
+                </div>
+
+                <div class="review_text">
+                    <h2 class="name">Karthikeya</h2>
+
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="review_social">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <p>
+                      Haiiii, Iam a Karthikeya from Herohalli. Here I am suffering from how to bring water to my farm. But AGRIFORLIFE made it and make my farm wortfull with crops. So Iam very glad to the AGRIFORLIFE.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="review_card">
+
+                <div class="review_profile">
+                    <img src="{% static 'images/appa.jpg' %}">
+                </div>
+
+                <div class="review_text">
+                    <h2 class="name">Narayan</h2>
+
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="review_social">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <p>
+                        LHaiiii, Iam a Narayan from Karikal Hillur. Here I am suffering from how to bring water to my farm. But AGRIFORLIFE made it and make my farm wortfull with crops. So Iam very glad to the AGRIFORLIFE.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--Order-->
+
+    <div class="order" id="Order">
+        <h1> Get In <span>Touch</span>with <span> Us</span></h1>
+
+        <div class="order_main">
+
+            <div class="order_image">
+                <img src="https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZHNoYWtlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" style="height: 80vh; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px; width: 35vw;">
+            </div>
+
+            <form action="/index/" method="post">{% csrf_token %}
+
+                <div class="input">
+                    <p>Name</p>
+                    <input type="text" placeholder="you name" name="name">
+                </div>
+
+                <div class="input">
+                    <p>Email</p>
+                    <input type="email" placeholder="you email" name="email">
+                </div>
+
+                <div class="input">
+                    <p>Number</p>
+                    <input placeholder="you number" name="number">
+                </div>
+
+                <div class="input">
+                    <p>Your farm Crop </p>
+                    <input placeholder="crop Name" name="cropname">
+                </div>
+
+                <div class="input">
+                    <p>Address</p>
+                    <input placeholder="you Address" name="address">
+                </div>
+
+                <input type="submit" class="order_btn" style="margin-top: 100px; margin-left: -314px;" value="Submit">
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!--Team-->
+
+    <div class="team" style="padding-top: 10vh;">
+        <h1>Our<span>Team</span></h1>
+
+        <div class="team_box">
+            <div class="profile">
+                <img src="{% static 'images/baggu.jpg' %}">
+
+                <div class="info">
+                    <h2 class="name">Bhargav Hegde</h2>
+                    <p class="bio">Technical Expert of the Project.</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'images/Naveen.JPG' %}">
+
+                <div class="info">
+                    <h2 class="name">Naveen Kumar</h2>
+                    <p class="bio">Best irrigation planner and executer for the farm.</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- <div class="profile">
+                <img src="{% static 'images/suryansh.jpg' %}">
+
+                <div class="info">
+                    <h2 class="name">Suryansh</h2>
+                    <p class="bio">Transportation Sector Complete Handler.</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div> -->
+
+            <!-- <div class="profile">
+                <img src="{% static 'images/nitin.jpg' %}">
+
+                <div class="info">
+                    <h2 class="name">Nitin S</h2>
+                    <p class="bio">Planning reporting for the Complete project.</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div> -->
+
+        </div>
+
+    </div>
+
+
+
+    <!--Footer-->
+
+    <footer>
+        <div class="footer_main" style="background: #1B262C; height: 30vh; padding-top: 20px; width: 99vw; margin-left: -10px; border-radius: 50px; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;">
+
+            <div class="footer_tag" >
+                <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Location</h2>
+                <p style="color: #cccccc;">Karnataka</p>
+                <p style="color: #cccccc;">Mumbai</p>
+                <p style="color: #cccccc;">Gujarat</p>
+                <p style="color: #cccccc;">Hyderabad</p>
+                <p style="color: #cccccc;">Chennai</p>
+            </div>
+
+            <div class="footer_tag">
+                <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Quick Link</h2>
+                <a href="" style="text-decoration: none; color: #cccccc; "><p>Home</p></a>
+                <a href="" style="text-decoration: none; color: #cccccc; "><p>About</p></a>
+                <a href="" style="text-decoration: none; color: #cccccc; "><p>Services</p></a>
+                <a href="" style="text-decoration: none; color: #cccccc; "><p>Contact</p></a>
+            </div>
+
+            <div class="footer_tag">
+                <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Contact</h2>
+                <p style="color: #cccccc;">+94 12 3456 789</p>
+                <p style="color: #cccccc;">+94 25 5568456</p>
+                <p style="color: #cccccc;">praveen@gmail.com</p>
+                <p style="color: #cccccc;">nitins@gmail.com</p>
+            </div>
+
+            <div class="footer_tag">
+                <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Our Service</h2>
+                <p style="color: #cccccc;">Fast Transport</p>
+                <p style="color: #cccccc;">Easy Payments</p>
+                <p style="color: #cccccc;">Irrigating Land</p>
+                <p style="color: #cccccc;">24 x 7 Service</p>
+            </div>
+
+            <div class="footer_tag">
+                <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Follows</h2>
+                <i class="fa-brands fa-facebook-f" style="color: #cccccc;"></i>
+                <i class="fa-brands fa-twitter" style="color: #cccccc;"></i>
+                <i class="fa-brands fa-instagram" style="color: #cccccc;"></i>
+                <i class="fa-brands fa-linkedin-in" style="color: #cccccc;"></i>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+        <script>window.setTimeout = null;</script>
+    
+</body>
+</html>

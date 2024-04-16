@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Sail&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+
+    <title>Hello, world!</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Lato');
+
+      * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-height: 100vh;
+  min-width: 100vw;
+  background-color: #485461;
+  background-image: linear-gradient(135deg, #485461 0%, #28313b 74%);
+  overflow-x: hidden;
+  transform-style: preserve-3d;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 3rem;
+}
+
+.menu {
+  min-width: 100vw;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 4rem;
+}
+
+.logo span {
+  font-weight: 300;
+}
+
+.hamburger-menu {
+  height: 4rem;
+  width: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bar {
+  width: 1.9rem;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: #eee;
+  transition: 0.5s;
+  position: relative;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #eee;
+  transition: 0.5s;
+}
+
+.bar:before {
+  transform: translateY(-9px);
+}
+
+.bar:after {
+  transform: translateY(9px);
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  left: 0;
+  z-index: 5;
+  overflow: hidden;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+header {
+  min-height: 100vh;
+  width: 100%;
+  background: url("{% static 'images/truck.jpg' %}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(43, 51, 59, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  max-width: 35rem;
+  text-align: center;
+  color: #fff;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2.7rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.8rem;
+  background-color: #1179e7;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container.active .bar {
+  transform: rotate(360deg);
+  background-color: transparent;
+}
+
+.container.active .bar:before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.container.active .bar:after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.container.active .main {
+  animation: main-animation 0.5s ease;
+  cursor: pointer;
+  transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+}
+
+@keyframes main-animation {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+}
+
+.links {
+  position: absolute;
+  width: 30%;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.links a {
+  text-decoration: none;
+  color: #eee;
+  padding: 0.7rem 0;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: hide 0.5s forwards ease;
+}
+
+.links a:hover {
+  color: #fff;
+}
+
+.container.active .links a {
+  animation: appear 0.5s forwards ease var(--i);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: 0.5s;
+  background-color: white;
+}
+
+.shadow.one {
+  z-index: -1;
+  opacity: 0.15;
+}
+
+.shadow.two {
+  z-index: -2;
+  opacity: 0.1;
+}
+
+.container.active .shadow.one {
+  animation: shadow-one 0.6s ease-out;
+  transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+}
+
+@keyframes shadow-one {
+  0% {
+    transform: translate(0);
+  }
+
+  5% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+
+  100% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+  }
+}
+
+.container.active .shadow.two {
+  animation: shadow-two 0.6s ease-out;
+  transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+}
+
+@keyframes shadow-two {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+
+  100% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+  }
+}
+
+.container.active .main:hover + .shadow.one {
+  transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.5);
+}
+
+.container.active .main:hover {
+  transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.5);
+}
+
+
+.transport_cards{
+  min-height: 100vh;
+  padding: 40px;
+
+  /* display: flex; */
+  padding-left: 40vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  background: hsl(220, 10%, 12%);
+  font-family: "Lato", "Segoe Ui", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.flip-card-container {
+  --hue: 150;
+  --primary: hsl(var(--hue), 50%, 50%);
+  --white-1: hsl(0, 0%, 90%);
+  --white-2: hsl(0, 0%, 80%);
+  --dark: hsl(var(--hue), 25%, 10%);
+  --grey: hsl(0, 0%, 50%);
+
+  width: 310px;
+  height: 500px;
+  margin: 40px;
+
+  perspective: 1000px;
+}
+
+/* .flip-card */
+.flip-card {
+  width: inherit;
+  height: inherit;
+
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .6s .1s;
+}
+
+/* hover and focus-within states */
+.flip-card-container:hover .flip-card,
+.flip-card-container:focus-within .flip-card {
+  transform: rotateY(180deg);
+}
+
+/* .card-... */
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+
+  background: var(--dark);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  backface-visibility: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .card-front */
+.card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* .card-back */
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* figure */
+figure {
+  z-index: -1;
+}
+
+/* figure, .img-bg */
+figure,
+.img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* img */
+img {
+  height: 100%;
+  border-radius: 24px;
+}
+
+/* figcaption */
+figcaption {
+  display: block;
+
+  width: auto;
+  margin-top: 12%;
+  padding: 8px 22px;
+
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  word-spacing: 6px;
+  text-align: right;
+
+  position: absolute;
+  top: 0;
+  right: 12px;
+
+  color: var(--white-1);
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+/* .img-bg */
+.img-bg {
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+.card-front .img-bg {
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+}
+
+.card-front .img-bg::before {
+  content: "";
+
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(18deg);
+
+  width: 100%;
+  height: 6px;
+  border: 1px solid var(--primary);
+  border-left-color: transparent;
+  border-right-color: transparent;
+
+  transition: .1s;
+}
+
+.card-back .img-bg {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+}
+
+/* hover state */
+.flip-card-container:hover .card-front .img-bg::before {
+  width: 6px;
+  border-left-color: var(--primary);
+  border-right-color: var(--primary);
+}
+
+/* ul */
+ul {
+  padding-top: 50%;
+  margin: 0 auto;
+  width: 70%;
+  height: 100%;
+
+  list-style: none;
+  color: var(--white-1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* li */
+li {
+  width: 100%;
+  margin-top: 12px;
+  padding-bottom: 12px;
+
+  font-size: 14px;
+  text-align: center;
+
+  position: relative;
+}
+
+li:nth-child(2n) {
+  color: var(--white-2);
+}
+
+li:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: currentColor;
+  opacity: .2;
+}
+
+/* button */
+button {
+  font-family: inherit;
+  font-weight: bold;
+  color: var(--white-1);
+
+  letter-spacing: 2px;
+
+  padding: 9px 20px;
+  border: 1px solid var(--grey);
+  border-radius: 1000px;
+  background: transparent;
+  transition: .3s;
+
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  color: var(--primary);
+  background: hsla(var(--hue), 25%, 10%, .2);
+  border-color: currentColor;
+}
+
+button:active {
+  transform: translate(2px);
+}
+
+/* .design-container */
+.design-container {
+  --tr: 90;
+  --op: .5;
+
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  pointer-events: none;
+}
+
+/* .design */
+.design {
+  display: block;
+
+  background: var(--grey);
+  position: absolute;
+
+  opacity: var(--op);
+  transition: .3s;
+}
+
+.design--1,
+.design--2,
+.design--3,
+.design--4 {
+  width: 1px;
+  height: 100%;
+}
+
+.design--1,
+.design--2 {
+  top: 0;
+  transform: translateY(calc((var(--tr) - (var(--tr) * 2)) * 1%))
+}
+
+.design--1 {
+  left: 20%;
+}
+
+.design--2 {
+  left: 80%;
+}
+
+.design--3,
+.design--4 {
+  bottom: 0;
+  transform: translateY(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%))
+}
+
+.design--3 {
+  left: 24%;
+}
+
+.design--4 {
+  left: 76%;
+}
+
+.design--5,
+.design--6,
+.design--7,
+.design--8 {
+  width: 100%;
+  height: 1px;
+}
+
+.design--5,
+.design--6 {
+  left: 0;
+  transform: translateX(calc((var(--tr) - (var(--tr) * 2)) * 1%));
+}
+
+.design--5 {
+  top: 41%;
+}
+
+.design--6 {
+  top: 59%;
+}
+
+.design--7,
+.design--8 {
+  right: 0;
+  transform: translateX(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%))
+}
+
+.design--7 {
+  top: 44%;
+}
+
+.design--8 {
+  top: 56%;
+}
+
+/* states */
+button:hover+.design-container,
+button:active+.design-container,
+button:focus+.design-container {
+  --tr: 20;
+  --op: .7;
+}
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 100%, .6);
+  font-size: 16px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.user-pic{
+    display: flex;
+    margin-left: 130px;
+}
+
+.user-pic img{
+    margin-top: 7px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+/*Footer*/
+
+footer{
+    width: 100%;
+    padding: 30px 0 0 20px;
+    background: #eeeeee;
+}
+
+footer .footer_main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+footer .footer_main .footer_tag{
+    text-align: center;
+}
+
+footer .footer_main .footer_tag h2{
+    color: #000;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+footer .footer_main .footer_tag p{
+    margin: 10px 0;
+}
+
+footer .footer_main .footer_tag i{
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+footer .footer_main .footer_tag i:hover{
+    color: #fac031;
+}
+
+footer .end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+footer .end span{
+    color: #fac031;
+    margin-left: 10px;
+}
+
+::-webkit-scrollbar{
+    width: 13px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb{
+    background: #fac031;
+    border-radius: 15px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <section class="navigation">
+    <div class="container">
+      <div class="navbar">
+        <div class="menu">
+          <h3 class="logo">Agri<span>FOR</span>LIFE</h3>
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-container">
+        <div class="main">
+          <header>
+            <div class="overlay">
+              <div class="inner">
+                <h2 class="title" style="font-family: 'Courgette', cursive;">Get a better <span style="font-family: 'Sail', cursive; color: #051141;">Price</span> Price for your <span style="font-family: 'Sail', cursive; color: #051141;">Goods</span> </h2>
+                <p>
+                  Get a best and Top most price for your goods by transporting them to a place with Us!...
+                </p>
+                <a href="#trans"><button class="btn">Read more</button></a>
+              </div>
+            </div>
+          </header>
+        </div>
+
+        <div class="shadow one"></div>
+        <div class="shadow two"></div>
+      </div>
+
+      <div class="links">
+        <ul>
+          <li>
+            <a href="/index_one" style="--i: 0.05s;">Home</a>
+          </li>
+          <li>
+            <a href="/index_one/#About" style="--i: 0.1s;">About </a>
+          </li>
+          <li>
+            <a href="/contract/index" style="--i: 0.15s;">Contract</a>
+          </li>
+          <li>
+            <a href="/index_one/#Gallary" style="--i: 0.2s;">Services</a>
+          </li>
+          <li class="user-pic">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.k7dE2dftQijg3KbpTyIObAHaHa&pid=Api&P=0" alt="">
+            <a href="/transport/log_out" style="--i: 0.25s; padding-left: 30px;">{{username}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <section class="transport_cards" id="trans"> 
+
+    <div class="heads" style="background: hsl(220, 10%, 12%); margin-left: -593px; ">
+      <h1 style="font-family: 'Mochiy Pop One', sans-serif; color:#eee">Some of the Best <span style="font-family: 'Reggae One', cursive; color: orangered;">Logistics</span> Companies In <span style="font-family: 'Reggae One', cursive; color: orangered;">India</span></h1>
+    </div>
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 170">
+      <div class="flip-card">
+    
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src="https://images.unsplash.com/photo-1607124010107-a2eafce10eea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8REhMJTIwbG9naXN0aWNzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Image 2">
+            <figcaption>DHL Logistics</figcaption>
+          </figure>
+    
+          <ul>
+            <li>world's leading logistics company</li>
+            <li>DHL INDIA worth over 500 Cr.</li>
+            <li>All Types Of Delivery</li>
+            <li>12 INTL. Branches</li>
+            <li>Price/100kg is:   App.250 Rs./Km</li>
+          </ul>
+        </div>
+    
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src="https://images.unsplash.com/photo-1644760776326-a90ae5437433?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjI1fHxESEwlMjBsb2dpc3RpY3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="image-2">
+          </figure>
+    
+          <div class="cardback-btnsd">
+            <a href="https://www.dhl.com/in-en/home.html?locale=true"><button>refference</button></a>
+            <a href="/transport/transportfarm" style="display: block; padding-top: 25px; padding-left: 25px;"><button>Book</button></a>
+          </div>
+    
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <!-- /flip-card-container -->
+    
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 350">
+      <div class="flip-card">
+    
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src="https://images.unsplash.com/photo-1631217074827-54ef4e5d2d54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmVkZXh8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+            <figcaption>FedEx</figcaption>
+          </figure>
+    
+          <ul>
+            <li>Revenue: Rs 6,956 Cr</li>
+            <li>Market capitalization: Rs 34,772 Cr.</li>
+            <li>Three-year sales growth: 3.48%</li>
+            <li>75 terminals and nine strategic tie-ups</li>
+            <li> Price/100kg is:    47.25 Rs./Km</li>
+          </ul>
+        </div>
+    
+        <div class="card-back">
+          <!-- only if the image is necessary -->
+          <figure>
+            <div class="img-bg"></div>
+            <img src="https://images.pexels.com/photos/10171605/pexels-photo-10171605.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Brohm Lake">
+          </figure>
+    
+          <div class="cardback-btnsd">
+            <a href="https://www.fedex.com/en-us/api.html"><button>refference</button></a>
+            <a href="/transport/transportfarm" style="display: block; padding-top: 25px; padding-left: 25px;"><button>Book</button></a>
+          </div>
+    
+          <!-- can add svg here and remove these eight spans -->
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <!-- /flip-card-container -->
+  </section>
+
+
+
+  <footer style="padding-bottom: 20px;">
+    <div class="footer_main" style="background: #1B262C; height: 30vh; padding-top: 20px; width: 99vw; margin-left: -10px; border-radius: 50px; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; ">
+
+        <div class="footer_tag" >
+            <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Location</h2>
+            <p style="color: #cccccc;">Karnataka</p>
+            <p style="color: #cccccc;">Mumbai</p>
+            <p style="color: #cccccc;">Hyderabad</p>
+            <p style="color: #cccccc;">Chennai</p>
+        </div>
+
+        <div class="footer_tag">
+            <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Quick Link</h2>
+            <a href="/index" style="text-decoration: none; color: #cccccc; "><p>Home</p></a>
+            <a href="/index/#About" style="text-decoration: none; color: #cccccc; "><p>About</p></a>
+            <a href="/index/#Gallary" style="text-decoration: none; color: #cccccc; "><p>Services</p></a>
+            <a href="/index/#Order" style="text-decoration: none; color: #cccccc; "><p>Contact</p></a>
+        </div>
+
+        <div class="footer_tag">
+            <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Contact</h2>
+            <p style="color: #cccccc;">+94 12 3456 789</p>
+            <p style="color: #cccccc;">+94 25 5568456</p>
+            <p style="color: #cccccc;">praveen@gmail.com</p>
+            <p style="color: #cccccc;">nitins@gmail.com</p>
+        </div>
+
+        <div class="footer_tag">
+            <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Our Service</h2>
+            <p style="color: #cccccc;">Fast Transport</p>
+            <p style="color: #cccccc;">Easy Payments</p>
+            <p style="color: #cccccc;">Irrigating Land</p>
+            <p style="color: #cccccc;">24 x 7 Service</p>
+        </div>
+
+        <div class="footer_tag">
+            <h2 style="font-family: 'Chicle', cursive; color: #fa6731;">Follows</h2>
+            <i class="fa-brands fa-facebook-f" style="color: #cccccc;"></i>
+            <i class="fa-brands fa-twitter" style="color: #cccccc;"></i>
+            <i class="fa-brands fa-instagram" style="color: #cccccc;"></i>
+            <i class="fa-brands fa-linkedin-in" style="color: #cccccc;"></i>
+        </div>
+
+    </div>
+
+</footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <script>
+      const hamburger_menu = document.querySelector(".hamburger-menu");
+      const container = document.querySelector(".container");
+
+      hamburger_menu.addEventListener("click", () => {
+      container.classList.toggle("active");
+});
+    </script>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

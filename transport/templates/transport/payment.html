@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+
+    <title>Hello, world!</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+      :root {
+  --white: #afafaf;
+  --red: #e31b23;
+  --bodyColor: #292a2b;
+  --borderFormEls: hsl(0, 0%, 10%);
+  --bgFormEls: hsl(0, 0%, 14%);
+  --bgFormElsFocus: hsl(0, 7%, 20%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+
+        .det{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 70vw;
+            margin-left: 15vw;
+            padding-top: 30px;
+        }
+
+        .des{
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        .s_2{
+            padding: 10px 50px;
+            color: red;
+            border-radius: 5px;
+            border: 1px solid black;
+            margin-left: 121px;
+        }
+
+        
+
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+a {
+  color: inherit;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+}
+
+/* Remove native arrow on IE */
+select::-ms-expand {
+  display: none;
+}
+
+/*Remove dotted outline from selected option on Firefox*/
+/*https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff/18853002#18853002*/
+/*We use !important to override the color set for the select on line 99*/
+select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 var(--white);
+}
+
+textarea {
+  resize: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font: 18px/1.5 "Open Sans", sans-serif;
+  background: var(--bodyColor);
+  color: var(--white);
+}
+
+
+
+.container {
+  /* max-width: 800px; */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+/* FORM ELEMENTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form h1 {
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.my-form li,
+.my-form .grid > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.my-form select,
+.my-form input,
+.my-form textarea,
+.my-form button {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid var(--borderFormEls);
+  color: var(--white);
+  background: var(--bgFormEls);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.my-form textarea {
+  height: 170px;
+}
+
+.my-form ::placeholder {
+  color: inherit;
+  /*Fix opacity issue on Firefox*/
+  opacity: 1;
+}
+
+.my-form select:focus,
+.my-form input:focus,
+.my-form textarea:focus,
+.my-form button:enabled:hover,
+.my-form button:focus,
+.my-form input[type="checkbox"]:focus + label {
+  background: var(--bgFormElsFocus);
+}
+
+.my-form select:focus,
+.my-form input:focus,
+.my-form textarea:focus {
+  transform: scale(1.02);
+}
+
+.my-form *:required,
+.my-form select {
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 15px 15px;
+}
+
+.my-form *:required {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg);  
+}
+
+.my-form select {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/down.svg);
+}
+
+.my-form *:disabled {
+  cursor: default;
+  filter: blur(2px);
+}
+
+
+/* FORM BTNS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form .required-msg {
+  display: none;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg)
+    no-repeat center left / 15px 15px;
+  padding-left: 20px;
+}
+
+.my-form .btn-grid {
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.2s;
+}
+
+.my-form button {
+  font-weight: bold;
+}
+
+.my-form button > * {
+  display: inline-block;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.my-form button .back {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-110%, -50%);
+}
+
+.my-form button:enabled:hover .back,
+.my-form button:focus .back {
+  transform: translate(-50%, -50%);
+}
+
+.my-form button:enabled:hover .front,
+.my-form button:focus .front {
+  transform: translateX(110%);
+}
+
+
+/* CUSTOM CHECKBOX
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.my-form input[type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 2rem;
+  transition: background 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.my-form input[type="checkbox"] + label::before,
+.my-form input[type="checkbox"] + label::after {
+  content: '';
+  position: absolute;
+}
+
+.my-form input[type="checkbox"] + label::before {
+  left: 0;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--white);
+}
+
+.my-form input[type="checkbox"]:checked + label::before {
+  background: var(--red);
+}
+
+.my-form input[type="checkbox"]:checked + label::after {
+  left: 7px;
+  top: 7px;
+  width: 6px;
+  height: 14px;
+  border-bottom: 2px solid var(--white);
+  border-right: 2px solid var(--white);
+  transform: rotate(45deg);
+}
+
+
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+footer {
+  font-size: 1rem;
+  text-align: right;
+  backface-visibility: hidden;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer span {
+  color: var(--red);
+}
+
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: 600px) {
+  .my-form .grid {
+    display: grid;
+    grid-gap: 1.5rem;
+  }
+
+  .my-form .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .my-form .grid-3 {
+    grid-template-columns: auto auto auto;
+    align-items: center;
+  }
+
+  .my-form .grid > *:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .my-form .required-msg {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 541px) {
+  .my-form input[type="checkbox"] + label::before {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .my-form input[type="checkbox"]:checked + label::after {
+    top: 3px;
+  }
+}
+
+.class-1{
+  color: #e31b23;
+}
+
+        
+    </style>
+  </head>
+  <body>
+    <h1>The Entered Details Of the <span style="color: red;">Transport Contract</span> is:</h1>
+    <form class="my-form" action="/transport/payment/" method="post">{% csrf_token %}
+        <div class="form-group row det">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10 des">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dname}}" >
+          </div>
+        </div>
+        <div class="form-group row det">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
+          <div class="col-sm-10  des">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dusername}}">
+          </div>
+        </div>
+        <div class="form-group row det">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10 des">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{demailid}}">
+          </div>
+        </div>
+        <div class="form-group row det">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Phone</label>
+          <div class="col-sm-10 des">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dphoneno}}">
+          </div>
+        </div>
+        <div class="form-group row det">
+          <label for="staticEmail" class="col-sm-2 col-form-label">From Place</label>
+          <div class="col-sm-10 des">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dfromplace}}">
+          </div>
+        </div>
+        <div class="form-group row det">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Dest Place</label>
+          <div class="col-sm-10 des">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ddestplace}}">
+          </div>
+        </div>
+        <div class="form-group row det">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Date of Transport</label>
+          <div class="col-sm-10 des">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ddate}}">
+          </div>
+        </div>
+        <div class="form-group row det">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Total Weight</label>
+          <div class="col-sm-10 des">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dweight}}">
+          </div>
+        </div>
+
+        <form action="/transport/payment/" method="post">
+          <label for="text" style="margin-left: 10vw; margin-top: 30px;">The payment Option is:</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="payment" style="max-width: 80vw; margin-left: 10vw; margin-top: 20px; padding: 20px;">
+                <option style="color: aliceblue;">Cash Payment</option>
+                <option style="color: aliceblue;">UPI Payment</option>
+                <option style="color: aliceblue;">Credit Card</option>
+                <option style="color: aliceblue;">Debit Card</option>
+              </select>
+
+        <h2 style="margin-left:10vw; margin-top:40px; font-family: 'Josefin Sans', sans-serif;">The  Total  <span class="s_1" style="color: red;"> Amount</span>  of Transportation  is <span class="s_2">&#x20B9 {{damount}}</span></h2>
+        <ul>
+        <li>
+          <input type="checkbox" id="terms">
+          <label for="terms">I have read and agreed with <a href="">the terms and conditions.</a></label>
+        </li>  
+        <li>
+          <div class="grid grid-3">
+            <div class="required-msg">REQUIRED FIELDS</div>
+            <button class="btn-grid" type="submit" disabled>
+              <span class="back">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/email-icon.svg" alt="">
+              </span>
+              <span class="front">SUBMIT</span>
+            </button>
+            <button class="btn-grid" type="reset" disabled>
+              <span class="back">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/eraser-icon.svg" alt="">
+              </span>
+              <span class="front">RESET</span>
+            </button> 
+          </div>
+        </li>
+      </ul>
+
+        <!-- <div class="btns" style="padding: 50px;">
+            <button type="submit" class="btn btn-primary" style="margin: 40px 40px 40px 110px;">Submit</button>
+            <a href="/transportfarm"><button type="submit" class="btn btn-primary">Cancel</button></a>
+        </div> -->
+
+
+    </form>
+        
+      </form>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+
+
+
+
+    <script>
+      const checkbox = document.querySelector('.my-form input[type="checkbox"]');
+  const btns = document.querySelectorAll(".my-form button");
+  
+  checkbox.addEventListener("change", function() {
+    const checked = this.checked;
+    for (const btn of btns) {
+      checked ? (btn.disabled = false) : (btn.disabled = true);
+    }
+  });
+    </script>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

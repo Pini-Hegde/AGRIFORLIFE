@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Oreder status</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .order-status{
+            padding-left: 10vw;
+            min-width: 80vw;
+            max-width: 90vw;
+            overflow: scroll;
+            height: 100vh;
+        }
+
+        .order-heading{
+            font-size: 20px;
+            color: black;
+            letter-spacing: 1px;
+            padding-bottom: 30px;
+        }
+
+        .order-details{
+            max-width: 75vw;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            /* background: rgb(240, 191, 191); */
+        }
+
+        .order-details h4{
+            padding: 15px 0 15px 20px;
+        }
+
+
+        .button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <form action="/contract/contracts/" method="post">{% csrf_token %}
+        <div>
+          <h2>Enter the order credentials Please....</h2>
+        </div>
+        
+      <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="inputname">Contract id</label>
+              <input type="name" class="form-control" id="contractid" name="contractid" placeholder="Name">
+          </div>
+          <div class="form-group col-md-6">
+              <label for="inputDimension">Randome text</label>
+              <input type="name" class="form-control" id="inputRandomText" name="inputRandomText" placeholder="E.g. Square, Oval, Rectangle, Parlellogram">
+          </div>
+        </div>
+
+        <input type="submit" value="submit" style="display:block; margin: 20px; padding:15px 50px; border-radius: 8px; border: 2px solid black; color: red;">
+    </form>
+
+    {% if prajwal %}
+    <section class="order-status" id="box">
+    <div class="order-heading">
+        <h1>The Entered Contract Details Are....</h1>
+    </div>
+
+    <div class="order-details">
+        <h4>your order id is: <span style="color: orangered;">{{contract_id}}</span></h4>
+        <h4>The land survey no is: <span style="color: orangered;">{{Survey_Number}}</span></h4>
+        <h4>The dimension of the land is: <span style="color: orangered;">{{dimension}}</span></h4>
+        <h4>The Area of the land is: <span style="color: orangered;">{{area}}</span></h4>
+        <h4>The Irrigation of the land choosen: <span style="color: orangered;">{{irrigation}}</span></h4>
+        <h4></h4>
+    </div>
+</section>
+
+<div style="margin-left:20vw; margin-top: -200px; ">
+    <a href="/contract/index"><button class="button-30" role="button">Back to Home</button></a>
+</div>
+    {% endif %}
+
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
